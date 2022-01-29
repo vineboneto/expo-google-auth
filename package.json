@@ -6,12 +6,20 @@
     "start": "expo start --dev-client",
     "android": "expo run:android",
     "ios": "expo run:ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "build:android": "eas build -p android"
   },
   "dependencies": {
-    "expo": "~44.0.2",
+    "babel-plugin-inline-dotenv": "^1.6.0",
+    "expo": ">=44.0.0-0 <45.0.0",
+    "expo-auth-session": "~3.5.0",
+    "expo-constants": "~13.0.1",
+    "expo-google-app-auth": "~8.3.0",
+    "expo-linking": "~3.0.0",
+    "expo-random": "~12.1.1",
     "expo-splash-screen": "~0.14.1",
     "expo-status-bar": "~1.2.0",
+    "expo-web-browser": "~10.1.0",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-native": "0.64.3",
