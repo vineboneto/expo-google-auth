@@ -9,11 +9,11 @@ export default function App() {
   const [error, setError] = useState('')
 
   const [request, response, promptAsync] = Google.useAuthRequest({
-    expoClientId: process.env.EXPO_ID,
-    androidClientId: process.env.EXPO_ANDROID_ID,
+    expoClientId: String(process.env.EXPO_ID),
+    androidClientId: String(process.env.EXPO_ANDROID_ID),
     ...(Constants.appOwnership === 'expo'
-      ? { redirectUri: process.env.EXPO_REDIRECT_URI }
-      : { redirectUri: process.env.EXPO_REDIRECT_URI_PRODUCT }),
+      ? { redirectUri: String(process.env.EXPO_REDIRECT_URI) }
+      : { redirectUri: String(process.env.EXPO_REDIRECT_URI_PRODUCT) }),
   })
 
   useEffect(() => {
@@ -41,7 +41,7 @@ export default function App() {
     <View style={styles.container}>
       <StatusBar style="auto" />
       <Text>Testando app Google Authentication</Text>
-      {!!user?.name && <Text style={styles.textWelcome}>Bem vindo, {user.name}</Text>}
+      {!!user?.name && <Text style={styles.textWelcome}>Bem vindo, {user?.name}</Text>}
       <Text style={styles.debug}>error: {error}</Text>
       <Text style={styles.debug}>RedirectUrl: {request?.redirectUri}</Text>
       <Text style={styles.debug}>AccessToken: {response?.authentication?.accessToken}</Text>
