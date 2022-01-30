@@ -1,4 +1,9 @@
 ## Autenticação Google
+<br />
+
+[![Build status](https://build.appcenter.ms/v0.1/apps/12facf10-be72-4568-9aa9-eb4a358b3001/branches/main/badge)](https://appcenter.ms)
+
+<br />
 
 - Estudo de como realizar login social `google` utilizando expo
 
