@@ -30,7 +30,6 @@ export default function App() {
             photo: userInfo.picture,
           })
         }
-        setError('')
       } catch (err) {
         setError(err.message)
       }
@@ -44,8 +43,6 @@ export default function App() {
       <Text>Testando app Google Authentication</Text>
       {!!user?.name && <Text style={styles.textWelcome}>Bem vindo, {user.name}</Text>}
       <Text style={styles.debug}>error: {error}</Text>
-      <Text style={styles.debug}>RedirectUri: {request?.redirectUri}</Text>
-      <Text style={styles.debug}>AccessToken: {response?.authentication?.accessToken}</Text>
       <Pressable
         style={({ pressed }) => [
           {
