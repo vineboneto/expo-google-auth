@@ -2493,14 +2493,6 @@ expand-brackets@^2.1.4:
     snapdragon "^0.8.1"
     to-regex "^3.0.1"
 
-expo-app-auth@~11.1.0:
-  version "11.1.0"
-  resolved "https://registry.yarnpkg.com/expo-app-auth/-/expo-app-auth-11.1.0.tgz#24456a4b5a12aed86b5aa616d8d3cd0128bb0284"
-  integrity sha512-H9iLLs5dMgVjpZj58WXVa3YJY99gYc4rENJivd7pFCFnUJ4XyVxHajS7CnOvJBH/+HPaaselFTde78Y7C+qHDg==
-  dependencies:
-    "@expo/config-plugins" "^4.0.2"
-    invariant "^2.2.4"
-
 expo-application@~4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/expo-application/-/expo-application-4.0.1.tgz#d38a1315c06c253b843c951ddc6fbb9a026f05cc"
@@ -2561,13 +2553,6 @@ expo-font@~10.0.4:
   integrity sha512-ieEsT6tD6yD6qT7WUzzJ5el0UvACr53RqICu0GI9GUiWuwDFPM2Oi5WfWwYFFStCRuaP6kEtpkJDUZ9cjT5F+w==
   dependencies:
     fontfaceobserver "^2.1.0"
-
-expo-google-app-auth@~8.3.0:
-  version "8.3.0"
-  resolved "https://registry.yarnpkg.com/expo-google-app-auth/-/expo-google-app-auth-8.3.0.tgz#076c2e44aa56eda73fd09c422bc11da1614dbd4f"
-  integrity sha512-JZd2N2W4mpqdoH0R68zrqmZvKKF8D/5i7lF4tmkWNdmWpGs5JgEfdKLYC5x93Yze7vwsrHKwEmyA6R74cR0e2A==
-  dependencies:
-    expo-app-auth "~11.1.0"
 
 expo-keep-awake@~10.0.1:
   version "10.0.1"
@@ -4454,6 +4439,11 @@ prepend-http@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/prepend-http/-/prepend-http-2.0.0.tgz#e92434bfa5ea8c19f41cdfd401d741a3c819d897"
   integrity sha1-6SQ0v6XqjBn0HN/UAddBo8gZ2Jc=
+
+prettier@^2.5.1:
+  version "2.5.1"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.5.1.tgz#fff75fa9d519c54cf0fce328c1017d94546bc56a"
+  integrity sha512-vBZcPRUR5MZJwoyi3ZoyQlc1rXeEck8KgeC9AwwOn+exuxLxq5toTRDTSaVrXHxelDMHy9zlicw8u66yxoSUFg==
 
 pretty-format@^26.5.2, pretty-format@^26.6.2:
   version "26.6.2"

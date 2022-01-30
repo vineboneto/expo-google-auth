@@ -135,7 +135,7 @@ android {
         applicationId "com.temp"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        manifestPlaceholders = [appAuthRedirectScheme: 'https://auth.expo.io/@vineboneto/com.temp']
+        manifestPlaceholders = [appAuthRedirectScheme: 'com.redirect']
         versionCode 1
         versionName "1.0"
     }
