@@ -10,7 +10,7 @@ export default function App() {
 
   const [request, response, promptAsync] = Google.useAuthRequest({
     expoClientId: process.env.EXPO_ID,
-    androidClientId: process.env.ANDROID_ID,
+    androidClientId: process.env.EXPO_ANDROID_ID,
     ...(Constants.appOwnership === 'expo'
       ? { redirectUri: process.env.EXPO_REDIRECT_URI }
       : { redirectUri: process.env.EXPO_REDIRECT_URI_PRODUCT }),
