@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { StatusBar } from 'expo-status-bar'
-import { StyleSheet, Text, View, Pressable, ScrollView } from 'react-native'
+import { StyleSheet, Text, View, Pressable } from 'react-native'
 import * as Google from 'expo-auth-session/providers/google'
 import Constants from 'expo-constants'
 
@@ -11,9 +11,10 @@ export default function App() {
   const [request, response, promptAsync] = Google.useAuthRequest({
     expoClientId: String(process.env.EXPO_ID),
     androidClientId: String(process.env.EXPO_ANDROID_ID),
-    ...(Constants.appOwnership === 'expo'
-      ? { redirectUri: String(process.env.EXPO_REDIRECT_URI) }
-      : { redirectUri: String(process.env.EXPO_REDIRECT_URI_PRODUCT) }),
+    redirectUri:
+      Constants.appOwnership === 'expo'
+        ? String(process.env.EXPO_REDIRECT_URI)
+        : String(process.env.EXPO_REDIRECT_URI_PROD),
   })
 
   useEffect(() => {
@@ -40,7 +41,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
-      <Text>Testando app Google Authentication</Text>
+      <Text>{process.env.EXPO_APP_NAME}</Text>
       {!!user?.name && <Text style={styles.textWelcome}>Bem vindo, {user?.name}</Text>}
       <Text style={styles.debug}>error: {error}</Text>
       <Text style={styles.debug}>RedirectUrl: {request?.redirectUri}</Text>

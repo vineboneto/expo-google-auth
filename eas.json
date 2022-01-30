@@ -15,7 +15,15 @@
     "preview": {
       "distribution": "internal"
     },
-    "production": {}
+    "production": {
+      "env": {
+        "EXPO_APP_NAME": "",
+        "EXPO_ID": "",
+        "EXPO_ANDROID_ID": "",
+        "EXPO_REDIRECT_URI": "",
+        "EXPO_REDIRECT_URI_PROD": "com.temp://"
+      }
+    }
   },
   "submit": {
     "production": {}
