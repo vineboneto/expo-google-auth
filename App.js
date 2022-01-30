@@ -19,7 +19,7 @@ export default function App() {
   useEffect(() => {
     async function signInWithGoogle() {
       try {
-        if (response.type === 'success' && response?.authentication?.accessToken) {
+        if (response?.type === 'success' && response?.authentication?.accessToken) {
           const baseUrl = 'https://www.googleapis.com/oauth2/v1/userinfo'
           const dataFetch = await fetch(`${baseUrl}?alt=json&access_token=${response.authentication.accessToken}`)
           const userInfo = await dataFetch.json()
@@ -30,6 +30,7 @@ export default function App() {
             photo: userInfo.picture,
           })
         }
+        setError('')
       } catch (err) {
         setError(err.message)
       }
@@ -38,24 +39,24 @@ export default function App() {
   }, [response])
 
   return (
-    <View style={styles.content}>
-      <ScrollView style={styles.container}>
-        <StatusBar style="auto" />
-        <Text>Testando app {process.env.EXPO_APP_NAME}</Text>
-        {!!user?.name && <Text style={styles.textWelcome}>Bem vindo, {user.name}</Text>}
-        <Text style={styles.debug}>error: {error}</Text>
-        <Pressable
-          style={({ pressed }) => [
-            {
-              backgroundColor: pressed ? '#421549' : 'purple',
-            },
-            styles.button,
-          ]}
-          onPress={promptAsync}
-        >
-          <Text style={styles.buttonText}>Fazer Login com google</Text>
-        </Pressable>
-      </ScrollView>
+    <View style={styles.container}>
+      <StatusBar style="auto" />
+      <Text>Testando app Google Authentication</Text>
+      {!!user?.name && <Text style={styles.textWelcome}>Bem vindo, {user.name}</Text>}
+      <Text style={styles.debug}>error: {error}</Text>
+      <Text style={styles.debug}>RedirectUri: {request?.redirectUri}</Text>
+      <Text style={styles.debug}>AccessToken: {response?.authentication?.accessToken}</Text>
+      <Pressable
+        style={({ pressed }) => [
+          {
+            backgroundColor: pressed ? '#421549' : 'purple',
+          },
+          styles.button,
+        ]}
+        onPress={() => promptAsync()}
+      >
+        <Text style={styles.buttonText}>Fazer Login com google</Text>
+      </Pressable>
     </View>
   )
 }
@@ -64,10 +65,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-  },
-  content: {
-    flex: 1,
-    marginTop: 60,
     justifyContent: 'center',
     alignItems: 'center',
   },

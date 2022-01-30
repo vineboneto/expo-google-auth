@@ -2,37 +2,40 @@
 
 - Estudo de como realizar login social `google` utilizando expo
 
-# Requisitos
+### Suporte
 
-- NODEJS [https://nodejs.org/en/download/](Link aqui)
+- [x] Android
+- [ ] iOS
+
+### Requisitos
+
+- NODEJS [Link aqui](https://nodejs.org/en/download/)
 - JavaSDK
-- bundletool [https://github.com/google/bundletool/releases](Link aqui)
-- Expo instalado [https://docs.expo.dev/get-started/installation/](Link aqui)
-- Logado em sua conta expo [https://docs.expo.dev/workflow/expo-cli/#auth](Link aqui)
+- bundletool [Link aqui](https://github.com/google/bundletool/releases)
+- Expo instalado [Link aqui](https://docs.expo.dev/get-started/installation/)
+- Logado em sua conta expo [Link aqui](https://docs.expo.dev/workflow/expo-cli/#auth)
 
-# Variáveis de ambiente
+### Variáveis de ambiente
 
 - Para configurar as variáveis de ambiente será necessário criar as credencias de client auth na `google`,
-  recomendo fortemente seguir a documentação presente no site da expo [https://docs.expo.dev/guides/authentication/#google](aqui), a descrição das mesmas se encontra abaixa de acordo com a documentação proposta no site
+  recomendo fortemente seguir a documentação presente no site da expo [aqui](https://docs.expo.dev/guides/authentication/#google), a descrição das mesmas se encontra abaixa de acordo com a documentação proposta no site
 - Preste atenção no arquivo `app.json`, possui informações importantes a respeito de build, é essencial configurar o `scheme` e `slug` para definir a variável de ambiente `EXPO_REDIRECT_URI`
 - A `redirect_uri`, é encarregado de retornar para o app após realizar a autenticação com o google
 - A `redirect_uri` utiliza de valores diferentes de acordo com o ambiente que está sendo executado, por exemplo, se você está executando o app com expo a `redirect_uri` possuíra um valor diferente de um app já instalado em um `android` ou `ios`.
-- Para o ambiente que o app será instalado é necessário configurações nas pastas `android` e `ios`, neste projeto já está configurado uma `redirect_uri` chamada `com.temp://`, porém você pode realizar está configuração com [https://www.npmjs.com/package/uri-scheme](uri-scheme), executando `npx uri-scheme list` para listar todas as uri do projeto e `npx uri-scheme add <your_uri>` para adicionar uma nova uri, está biblioteca se encarregará de realizar as configurações necessárias nas pastas `android` e `ios`, caso queira saber mais informações pode consultar esta [documentação](https://github.com/expo/expo/tree/main/packages/expo-auth-session#configuration)
+- Para o ambiente que o app será instalado é necessário configurações nas pastas `android` e `ios`, neste projeto já está configurado uma `redirect_uri` chamada `com.temp://`, porém você pode realizar está configuração com [uri-scheme](https://www.npmjs.com/package/uri-scheme), executando `npx uri-scheme list` para listar todas as uri do projeto e `npx uri-scheme add <your_uri>` para adicionar uma nova uri, está biblioteca se encarregará de realizar as configurações necessárias nas pastas `android` e `ios`, caso queira saber mais informações pode consultar esta [documentação](https://github.com/expo/expo/tree/main/packages/expo-auth-session#configuration)
 
 ```shell
-# Nome do app, um tanto irrelevante
-EXPO_APP_NAME=temp
-# Representa o  expoClientId
+# Representa o expoClientId
 EXPO_ID=
 # Representa o androidClientId
 EXPO_ANDROID_ID=
 # Representa a URL de redirect no modo develop com expo client, segue abaixo exemplo
 EXPO_REDIRECT_URI=https://auth.expo.io/@your-username-expo-account/yout-slug-expo-project
-# Representa a URL de redirect quando o app for instalado em um android ou ios
+# Representa a URL de redirect quando o app estiver instalado em um android ou ios
 EXPO_REDIRECT_URI_PRODUCT=com.temp://
 ```
 
-# Instalação Develop
+### Instalação Develop
 
 ```shell
 # Instalar dependências
@@ -43,7 +46,7 @@ $ expo start
 
 ```
 
-# Produção
+### Produção
 
 ```shell
 # Instalar dependências
